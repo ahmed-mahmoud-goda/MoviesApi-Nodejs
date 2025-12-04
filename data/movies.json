@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Inception",
+    "description": "A skilled thief enters the dreams of others to steal secrets and plant ideas.",
+    "duration": 148,
+    "rating": 4.8,
+    "totalRating": 12500,
+    "releaseYear": 2010,
+    "genres": ["Action", "Sci-Fi", "Thriller"],
+    "coverImage": "https://example.com/images/inception.jpg",
+    "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page", "Tom Hardy"]
+  },
+  {
+    "name": "The Dark Knight",
+    "description": "Batman faces the Joker, a criminal mastermind who plunges Gotham into chaos.",
+    "duration": 152,
+    "rating": 4.9,
+    "totalRating": 21000,
+    "releaseYear": 2008,
+    "genres": ["Action", "Crime", "Drama"],
+    "coverImage": "https://example.com/images/dark-knight.jpg",
+    "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart", "Michael Caine"]
+  },
+  {
+    "name": "Interstellar",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity’s survival.",
+    "duration": 169,
+    "rating": 4.7,
+    "totalRating": 18000,
+    "releaseYear": 2014,
+    "genres": ["Adventure", "Drama", "Sci-Fi"],
+    "coverImage": "https://example.com/images/interstellar.jpg",
+    "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain", "Michael Caine"]
+  },
+  {
+    "name": "Avatar",
+    "description": "A paraplegic Marine is sent to the moon Pandora on a unique mission but becomes torn between following orders and protecting the world he feels is his home.",
+    "duration": 162,
+    "rating": 4.6,
+    "totalRating": 25000,
+    "releaseYear": 2009,
+    "genres": ["Action", "Adventure", "Fantasy"],
+    "coverImage": "https://example.com/images/avatar.jpg",
+    "actors": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver", "Stephen Lang"]
+  },
+  {
+    "name": "The Matrix",
+    "description": "A hacker discovers the shocking truth about reality and joins a rebellion against the machines.",
+    "duration": 136,
+    "rating": 4.8,
+    "totalRating": 30000,
+    "releaseYear": 1999,
+    "genres": ["Action", "Sci-Fi"],
+    "coverImage": "https://example.com/images/matrix.jpg",
+    "actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss", "Hugo Weaving"]
+  },
+  {
+    "name": "Gladiator",
+    "description": "A betrayed Roman general fights his way to revenge through the gladiatorial arena.",
+    "duration": 155,
+    "rating": 4.5,
+    "totalRating": 16000,
+    "releaseYear": 2000,
+    "genres": ["Action", "Drama", "History"],
+    "coverImage": "https://example.com/images/gladiator.jpg",
+    "actors": ["Russell Crowe", "Joaquin Phoenix", "Connie Nielsen", "Oliver Reed"]
+  },
+  {
+    "name": "Titanic",
+    "description": "A love story unfolds aboard the ill-fated R.M.S. Titanic.",
+    "duration": 195,
+    "rating": 4.7,
+    "totalRating": 50000,
+    "releaseYear": 1997,
+    "genres": ["Drama", "Romance"],
+    "coverImage": "https://example.com/images/titanic.jpg",
+    "actors": ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane", "Kathy Bates"]
+  },
+  {
+    "name": "Avengers: Endgame",
+    "description": "The Avengers assemble one last time to reverse the damage caused by Thanos.",
+    "duration": 181,
+    "rating": 4.8,
+    "totalRating": 60000,
+    "releaseYear": 2019,
+    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "coverImage": "https://example.com/images/endgame.jpg",
+    "actors": ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson", "Mark Ruffalo"]
+  },
+  {
+    "name": "Joker",
+    "description": "A mentally troubled comedian embarks on a downward spiral that leads to the creation of an iconic villain.",
+    "duration": 122,
+    "rating": 4.5,
+    "totalRating": 22000,
+    "releaseYear": 2019,
+    "genres": ["Crime", "Drama", "Thriller"],
+    "coverImage": "https://example.com/images/joker.jpg",
+    "actors": ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz", "Frances Conroy"]
+  },
+  {
+    "name": "The Shawshank Redemption",
+    "description": "Two imprisoned men bond over years, finding solace and eventual redemption through acts of decency.",
+    "duration": 142,
+    "rating": 4.9,
+    "totalRating": 85000,
+    "releaseYear": 1994,
+    "genres": ["Drama"],
+    "coverImage": "https://example.com/images/shawshank.jpg",
+    "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton", "William Sadler"]
+  }
+]
