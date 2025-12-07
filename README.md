@@ -29,6 +29,10 @@
    LOCAL_CONN_STR= mongodb://localhost:27017/Movies
    SECRET_STR= your_jwt_secret_here
    LOGIN_EXPIRE= 30d
+   EMAIL_USER=your_email_address_here
+   EMAIL_PASSWORD=your_email_password_here
+   EMAIL_HOST=your_smtp_host_here
+   EMAIL_PORT=your_smtp_port_here
 
 ## Running Project
 
