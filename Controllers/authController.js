@@ -15,8 +15,18 @@ const createSendResponse = (user, statusCode, res) => {
     user.password = undefined;
     user.confirmPassword = undefined;
     user.passwordChangedAt = undefined;
-    
+
     const token = getToken(user._id);
+
+    const options = {
+        maxAge: parseInt(process.env.LOGIN_EXPIRE),
+        httpOnly: true
+    }
+    if (process.env.NODE_ENV == 'production') {
+        options.secure = true;
+    }
+
+    res.cookie('jwt', token, options)
 
     res.status(statusCode).json({
         status: 'success',
@@ -54,11 +64,11 @@ const login = asyncErrorHandler(async (req, res, next) => {
 
 const protect = asyncErrorHandler(async (req, res, next) => {
 
-    // Read Token
-    const testToken = req.headers.authorization;
     let token;
-    if (testToken && testToken.startsWith('Bearer')) {
-        token = testToken.split(' ')[1];
+    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+        token = req.headers.authorization.split(' ')[1];
+    } else if (req.cookies && req.cookies.jwt) {
+        token = req.cookies.jwt;
     }
     if (!token) {
         next(new CustomError("You are not logged in", 401))
@@ -108,7 +118,7 @@ const forgotPassword = asyncErrorHandler(async (req, res, next) => {
 
     await user.save({ validateBeforeSave: false });
 
-    const resetUrl = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`
+    const resetUrl = `${req.protocol}://${req.get('host')}/api/v1/auth/resetPassword/${resetToken}`
     const msg = `We received the password reset request. use the below link to reset your password.\n\n${resetUrl}\n\nThis link will work for only 15 minutes.`
 
     try {
@@ -153,21 +163,4 @@ const resetPassword = asyncErrorHandler(async (req, res, next) => {
     createSendResponse(user, 200, res);
 })
 
-const updatePassword = asyncErrorHandler(async (req, res, next) => {
-
-    const user = await User.findById(req.user._id).select('+password');
-
-    if (!(await user.comparePassword(req.body.currentPassword, user.password))) {
-        return next(new CustomError('The password you provided is wrong.', 401))
-    }
-
-    user.password = req.body.password;
-    user.confirmPassword = req.body.confirmPassword;
-    user.passwordChangedAt = Date.now();
-
-    await user.save();
-
-    createSendResponse(user, 200, res);
-})
-
-module.exports = { signup, login, protect, restrict, forgotPassword, resetPassword, updatePassword }
+module.exports = { signup, login, protect, restrict, forgotPassword, resetPassword, createSendResponse }

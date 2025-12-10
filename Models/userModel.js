@@ -39,6 +39,11 @@ const userSchema = new mongoose.Schema({
             message: "Confirm password must be the same as password."
         }
     },
+    active:{
+        type:Boolean,
+        default:true,
+        select:false
+    },
     passwordChangedAt: {
         type: Date,
         select: false
@@ -58,6 +63,11 @@ userSchema.pre('save', async function (next) {
     this.password = await bcrypt.hash(this.password, 12);
     this.confirmPassword = undefined;
     next();
+})
+
+userSchema.pre(/^find/,function(next){
+    this.find({active:{$ne:false}})
+    next()
 })
 
 userSchema.methods.comparePassword = async function (pass, passDb) {
